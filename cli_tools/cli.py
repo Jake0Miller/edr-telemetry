@@ -41,3 +41,6 @@ def create():
 
 def delete():
     delete_controller.menu()
+
+def modify():
+    modify_controller.menu()
