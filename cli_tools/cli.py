@@ -2,6 +2,7 @@ import argparse
 import os
 
 from cli_tools import create_controller
+from cli_tools import delete_controller
 
 def command_line_arguments():
     parser = argparse.ArgumentParser(
@@ -37,3 +38,6 @@ def command_line_arguments():
 
 def create():
     create_controller.menu()
+
+def delete():
+    delete_controller.menu()

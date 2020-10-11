@@ -7,28 +7,38 @@ FILES_DIR = os.getcwd() + '/files'
 def go_to(choice):
     globals()[choice]()
 
-def create_file(path):
+def prune_subdirectories():
+    for path, subdirs, files in os.walk(FILES_DIR):
+        for subdir in subdirs:
+            base = path.split('edr-telemetry/')
+            loc = base[1] + '/' + subdir
+            if not os.listdir(loc):
+                os.rmdir(loc)
+
+def delete_file(path):
     helpers.clear_screen()
     full_path = FILES_DIR + path
+    print(full_path)
     if os.path.exists(full_path):
-        print("This file already exists!")
-        menu()
+        os.remove(full_path)
+        print('File successfully deleted. Goodbye.')
+        prune_subdirectories()
     else:
-        helpers.create_dir('/'.join(full_path.split('/')[0:-1]))
-        open('files/' + path, 'w').close()
-        print('File successfully created. Goodbye.')
+        print("This file does not exist!")
+        import pdb; pdb.set_trace()
+        menu()
 
 def menu():
-    options = ['exit', 'view', 'create']
+    options = ['exit', 'view', 'delete']
     choice = None
 
     while choice not in options:
         helpers.clear_screen()
-        print('Welcome to Create Mode!\n')
+        print('Welcome to Delete Mode!\n')
         print('Menu options:')
         print('\tView directory contents')
-        print('\tCreate a new file\n')
-        print('Please select View or Create. Type Exit to quit.\n')
+        print('\tDelete a file\n')
+        print('Please select View or Delete. Type Exit to quit.\n')
         choice = input().lower()
 
     go_to(choice)
@@ -43,9 +53,9 @@ def view():
 
     go_to(choice)
 
-def create():
+def delete():
     helpers.clear_screen()
-    print('Enter the path and name of a file to create')
+    print('Enter the path and name of a file to delete')
     print('  (eg path/to/my/file.txt)\n')
     print('or type Menu to go back or Exit to quit.\n')
     choice = '/' + input().lower()
@@ -53,7 +63,7 @@ def create():
     if choice in ['menu', 'exit']:
         go_to(choice)
     else:
-        create_file(choice)
+        delete_file(choice)
 
 def exit():
     helpers.clear_screen()
