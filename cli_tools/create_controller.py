@@ -1,5 +1,7 @@
 import os
 
+from cli_tools import directory_printer
+
 FILES_DIR = os.getcwd() + '/files'
 
 def go_to(choice):
@@ -44,17 +46,8 @@ def view():
 
     while choice not in options:
         clear_screen()
-        print('Contents of files directory:\n')
-
         create_dir(FILES_DIR)
-
-        depth = 0
-        for path, subdirs, files in os.walk(FILES_DIR):
-            print('-' * depth + path.split('/')[-1] + '/')
-            depth += 1
-            for file in files:
-                print('-' * depth + file)
-
+        directory_printer.print_directory(FILES_DIR)
         choice = input('\nType Menu or Exit: ')
 
     go_to(choice)
