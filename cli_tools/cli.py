@@ -20,7 +20,7 @@ def command_line_arguments():
 
     group = parser.add_argument_group(
         title = 'required',
-        description = '-m, --mode  {create,write,erase,clear,delete,send,activate}'
+        description = '-m, --mode  {create,modify,delete,send,activate}'
     )
 
     group.add_argument(
@@ -28,7 +28,7 @@ def command_line_arguments():
         dest='mode',
         action = 'store',
         metavar = '',
-        choices = ['create', 'write', 'erase', 'clear', 'delete', 'send', 'activate'],
+        choices = ['create', 'modify', 'delete', 'send', 'activate'],
         required = True,
         help = argparse.SUPPRESS
     )

@@ -4,7 +4,7 @@ This is a command line program which can be run in several modes.
 
 ## Mode Descriptions
 
-create, write, erase, clear, delete, send, activate
+create, modify, send, activate
 
 ## Setup
 
