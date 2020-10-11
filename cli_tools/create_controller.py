@@ -1,28 +1,21 @@
 import os
 
-from cli_tools import directory_printer
+from cli_tools import helpers
 
 FILES_DIR = os.getcwd() + '/files'
 
 def go_to(choice):
     globals()[choice]()
 
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def create_dir(path):
-    if not os.path.exists(path): os.makedirs(path)
-
 def create_file(path):
+    helpers.clear_screen()
     full_path = FILES_DIR + path
     if os.path.exists(full_path):
-        clear_screen()
         print("This file already exists!")
         menu()
     else:
-        create_dir('/'.join(full_path.split('/')[0:-1]))
+        helpers.create_dir('/'.join(full_path.split('/')[0:-1]))
         open('files/' + path, 'w').close()
-        clear_screen()
         print('File successfully created. Goodbye.')
 
 def menu():
@@ -30,7 +23,7 @@ def menu():
     choice = None
 
     while choice not in options:
-        clear_screen()
+        helpers.clear_screen()
         print('Welcome to Create Mode!\n')
         print('Menu options:')
         print('\tView directory contents')
@@ -45,19 +38,17 @@ def view():
     choice = None
 
     while choice not in options:
-        clear_screen()
-        create_dir(FILES_DIR)
-        directory_printer.print_directory(FILES_DIR)
+        helpers.print_directory(FILES_DIR)
         choice = input('\nType Menu or Exit: ')
 
     go_to(choice)
 
 def create():
-    clear_screen()
+    helpers.clear_screen()
     print('Enter the path and name of a file to create')
-    print('  (eg /path/to/my/file.txt)\n')
+    print('  (eg path/to/my/file.txt)\n')
     print('or type Menu to go back or Exit to quit.\n')
-    choice = input().lower()
+    choice = '/' + input().lower()
 
     if choice in ['menu', 'exit']:
         go_to(choice)
@@ -65,5 +56,5 @@ def create():
         create_file(choice)
 
 def exit():
-    clear_screen()
+    helpers.clear_screen()
     print('Goodbye!')
