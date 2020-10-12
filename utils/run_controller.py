@@ -1,5 +1,5 @@
-
+import subprocess
 
 def run(process, arguments):
-    print(process)
-    print(arguments)
+    arguments.insert(0, process)
+    subprocess.call(arguments)
