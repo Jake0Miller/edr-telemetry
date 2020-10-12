@@ -1,0 +1,12 @@
+{
+  "actions":  [
+    {
+      "method": "run",
+      "process": "echo",
+      "arguments": [
+        "hello",
+        "world"
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@ from utils import create_controller as cc
 from utils import modify_controller as mc
 from utils import delete_controller as dc
 from utils import http_controller as hc
+from utils import run_controller as rc
 
 def create(action):
     path, filename = action['path'], action['filename']
@@ -23,3 +24,7 @@ def erase(action):
 def send(action):
     address, data = action['address'], action['data']
     hc.send(address, data)
+
+def run(action):
+    process, arguments = action['process'], action['arguments']
+    rc.run(process, arguments)
