@@ -39,3 +39,10 @@ Delete a file, with the user providing the path and filename.
 
 
 ### Activate
+
+
+## Dependencies
+
+Python module `requests`
+
+Install via `pip install requests`
