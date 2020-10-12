@@ -36,10 +36,11 @@ Delete a file, with the user providing the path and filename.
 
 ### Send
 
+Send an HTTP request, provided an address and request body.
 
+### Run
 
-### Activate
-
+Run a local process
 
 ## Dependencies
 
