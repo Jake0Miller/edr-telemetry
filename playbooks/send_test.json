@@ -1,0 +1,11 @@
+{
+  "actions":  [
+    {
+      "method": "send",
+      "address": "https://www.google.com",
+      "data": {
+        "data": "test1.txt"
+      }
+    }
+  ]
+}
