@@ -1,0 +1,24 @@
+{
+  "actions":  [
+    {
+      "method": "delete",
+      "path": "test/path/",
+      "filename": "test1.txt"
+    },
+    {
+      "method": "delete",
+      "path": "test/",
+      "filename": "test2.html"
+    },
+    {
+      "method": "delete",
+      "path": "test/",
+      "filename": "test3.py"
+    },
+    {
+      "method": "delete",
+      "path": "test/path2/",
+      "filename": "test.css"
+    }
+  ]
+}
