@@ -3,6 +3,7 @@ import os
 
 from cli_tools import create_controller
 from cli_tools import delete_controller
+from cli_tools import modify_controller
 
 def command_line_arguments():
     parser = argparse.ArgumentParser(
