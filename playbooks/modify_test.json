@@ -1,0 +1,27 @@
+{
+  "actions":  [
+    {
+      "method": "append",
+      "path": "test/path/",
+      "filename": "test1.txt",
+      "line": "The quick brown fox gets the worm."
+    },
+    {
+      "method": "append",
+      "path": "test/",
+      "filename": "test2.html",
+      "line": "<p>The lazy dog is slow and steady.</p>"
+    },
+    {
+      "method": "append",
+      "path": "test/",
+      "filename": "test3.py",
+      "line": "This won't matter."
+    },
+    {
+      "method": "erase",
+      "path": "test/",
+      "filename": "test3.py"
+    }
+  ]
+}

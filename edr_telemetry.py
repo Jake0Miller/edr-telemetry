@@ -1,8 +1,9 @@
 #!.venv/bin/python
 
-from cli_tools import cli
+from utils import cli
+from utils import json_processor as jp
 
 if __name__ == "__main__":
     args = cli.command_line_arguments()
-    mode = args.mode
-    getattr(cli, mode)()
+    file = args.file
+    jp.process('playbooks/' + file)

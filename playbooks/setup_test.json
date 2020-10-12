@@ -1,0 +1,24 @@
+{
+  "actions":  [
+    {
+      "method": "create",
+      "path": "test/path/",
+      "filename": "test1.txt"
+    },
+    {
+      "method": "create",
+      "path": "test/",
+      "filename": "test2.html"
+    },
+    {
+      "method": "create",
+      "path": "test/",
+      "filename": "test3.py"
+    },
+    {
+      "method": "create",
+      "path": "test/path2/",
+      "filename": "test.css"
+    }
+  ]
+}
