@@ -30,6 +30,10 @@ Create a new file with the provided the path and filename.
 
 Append a line to the end of a file. Requires a path and filename as well as the line to be appended.
 
+### Erase
+
+Erase the contents of a file, with the user providing the path and filename.
+
 ### Delete
 
 Delete a file, with the user providing the path and filename.
