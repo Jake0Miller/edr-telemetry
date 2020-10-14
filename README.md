@@ -36,11 +36,11 @@ Delete a file, with the user providing the path and filename.
 
 ### Send
 
-Send an HTTP request, provided an address and request body.
+Send a data by UDP, provided the address and port for the destination, source port, and data.
 
 ### Run
 
-Run a local process
+Run a local process, provided the process name and a list of command line arguments.
 
 ## Dependencies
 
