@@ -1,5 +1,7 @@
 import os
 
+from utils import logger
+
 FILES_DIR = os.getcwd() + '/files'
 
 def prune_subdirectories():
@@ -15,7 +17,7 @@ def prune_subdirectories():
         if os.path.exists(loc) and not os.listdir(loc):
             os.rmdir(loc)
 
-def delete_file(path, filename):
+def delete_file(path, filename, source):
     if path[0] != '/':
         path = '/' + path
 
@@ -23,7 +25,7 @@ def delete_file(path, filename):
 
     if os.path.exists(full_path):
         os.remove(full_path)
-        print('File successfully deleted.')
+        logger.log_file(full_path, 'delete', source)
         prune_subdirectories()
     else:
         print("This file does not exist!")
