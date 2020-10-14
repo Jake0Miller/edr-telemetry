@@ -1,5 +1,8 @@
 import subprocess
 
+from utils import logger
+
 def run(process, arguments):
     arguments.insert(0, process)
-    subprocess.call(arguments)
+    proc = subprocess.Popen(arguments)
+    logger.log_run(process, arguments, proc.pid)

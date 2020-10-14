@@ -30,17 +30,21 @@ Create a new file with the provided the path and filename.
 
 Append a line to the end of a file. Requires a path and filename as well as the line to be appended.
 
+### Erase
+
+Erase the contents of a file, with the user providing the path and filename.
+
 ### Delete
 
 Delete a file, with the user providing the path and filename.
 
 ### Send
 
-Send an HTTP request, provided an address and request body.
+Send a data by UDP, provided the address and port for the destination, source port, and data.
 
 ### Run
 
-Run a local process
+Run a local process, provided the process name and a list of command line arguments.
 
 ## Dependencies
 
