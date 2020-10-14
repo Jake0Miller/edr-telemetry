@@ -9,7 +9,7 @@ def send(destination, port, data, source):
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
     host = socket.gethostbyname(socket.gethostname())
-    s.bind((host, int(port)))
+    s.bind(('', int(port)))
     s.sendto(encoded_data, destination)
 
     logger.log_send(destination, port, host, amount, protocol, source)
